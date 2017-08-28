@@ -65,7 +65,12 @@ export const getInitialCreditCardValues = createSelector(
                     alpha2: 'US'
                 },
             },
-            creditCard: isEmpty(creditCard) ? storedCreditCard : creditCard,
+            creditCard: !isEmpty(creditCard) ? creditCard : {
+                creditCardNumber: '4111111111111111',
+                creditCardExpDate: '01/99',
+                creditCardCvv: '123',
+                ...storedCreditCard,
+            },
             shouldSaveNewPayment,
             shouldUseShippingAddress,
         }
