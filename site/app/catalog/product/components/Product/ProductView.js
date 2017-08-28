@@ -6,7 +6,6 @@ import Breadcrumbs from 'catalog/breadcrumbs/components/Breadcrumbs'
 import Button from 'material-kit/components/Button'
 import RightHandRelatedProductWidget from 'content/components/widgets/RightHandRelatedProductWidget'
 import Price from 'material-kit/components/Price'
-import ProductChildAddons from './ProductChildAddons'
 import ProductImagePicker from 'catalog/product/components/ProductImagePicker'
 import PromotionMessages from './PromotionMessages'
 import ProductOptions from './ProductOptions'
@@ -16,7 +15,6 @@ import WishlistButton from 'catalog/product/components/WishlistButton'
 
 const ProductView = ({
     addToCartText,
-    configureItemRequest,
     disabled,
     handleAddToCartSubmit,
     id,
@@ -69,8 +67,6 @@ const ProductView = ({
                         {({ handleSubmit }) => (
                             <div>
                                 <ProductOptions productOption={productOption}/>
-
-                                <ProductChildAddons configureItemRequest={configureItemRequest}/>
 
                                 <div className='row'>
                                     <div className='col-sm-10'>
