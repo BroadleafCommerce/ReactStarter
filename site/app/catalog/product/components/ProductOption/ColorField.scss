@@ -1,0 +1,37 @@
+
+.ColorField {
+
+
+    .ColorField__option {
+        display: inline-block;
+        margin: 10px 10px 10px 0;
+        color: transparent;
+        -moz-transition: all 0.3s ease-in-out, padding 1ms none;
+        -o-transition: all 0.3s ease-in-out, padding 1ms none;
+        -webkit-transition: all 0.3s ease-in-out, padding 1ms none;
+        transition: all 0.3s ease-in-out, padding 1ms none;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        height: 36px;
+        width: 36px;
+        padding: 4px 0 0 4px;
+
+        .ColorField__option__inner {
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            display: block;
+            height: 26px;
+            width: 26px;
+            position: relative;
+        }
+    }
+
+    .ColorField__option--active {
+        @extend .ColorField__option;
+        border-width: 2px;
+        padding: 3px 0 0 3px;
+    }
+}

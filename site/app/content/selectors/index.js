@@ -1,0 +1,1 @@
+export { getContentData } from './contentSelectors'

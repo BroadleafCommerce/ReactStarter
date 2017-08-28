@@ -1,0 +1,75 @@
+
+.SuggestionDropdownMenu {
+    display: flex;
+    width: 800px;
+
+    & > li:not(:last-child):after {
+        content: " ";
+        border-right: 1px solid #efefef;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    & > li > h4 {
+        font-weight: 500;
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.SuggestionDropdownList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    li {
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    li.Suggestion > a.Suggestion__link {
+        text-transform: none;
+        color: #3C4858;
+        font-size: 16px;
+        padding: 10px;
+        margin: 0;
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+
+    li.Suggestion > a.Suggestion__link--active {
+        @extend .Suggestion__link;
+        color: white;
+    }
+
+    li.Suggestion > a.Suggestion__link img {
+        width: 70px;
+        display: inline-block;
+    }
+
+    li.Suggestion > a.Suggestion__link > h5 {
+        display: inline-block;
+        padding: 0;
+        margin: 0 5px;
+        font-size: 16px;
+        vertical-align: top;
+    }
+
+    li.Suggestion > a.Suggestion__link > .Suggestion__link__prices {
+        font-size: 15px;
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+    }
+
+    li.Suggestion > a.Suggestion__link--active > .Suggestion__link__prices {
+        color: white;
+    }
+}

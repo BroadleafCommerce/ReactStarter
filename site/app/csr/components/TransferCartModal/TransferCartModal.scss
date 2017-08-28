@@ -1,0 +1,23 @@
+@import 'layout/style/common.scss';
+
+.TransferCartModal {
+    font-family: 'Open Sans', Helvetica, san-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .TransferCartModal__header {
+        font-size: 21px;
+        line-height: 24px;
+        font-weight: 600;
+        margin: 0 0 15px 0;
+        padding: 0 0 10px 0;
+        border-bottom: 2px dashed $lightgrey;
+        width: 100%;
+        align-self: flex-start;
+    }
+
+    .TransferCartModal__submit {
+        @extend .Button--green;
+    }
+}

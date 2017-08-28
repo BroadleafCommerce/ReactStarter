@@ -1,0 +1,24 @@
+
+
+.PaymentMethods {
+
+    :global {
+        .form-group {
+            margin: 1em 0 0 0;
+        }
+    }
+
+    .PaymentMethods__selectors {
+        margin: 1em 0;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ccc;
+
+        .TypePill {
+
+            i {
+                display: inline-block;
+                padding: 0 5px 0 0;
+            }
+        }
+    }
+}

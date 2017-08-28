@@ -1,0 +1,27 @@
+
+.col-centered {
+    display: inline-block;
+    float: none;
+    text-align: left;
+    margin-right: -4px;
+    vertical-align: top;
+}
+
+.col-centered-separator {
+    border-right: 1px solid #CCCCCC;
+    width: 1px;
+    height: 300px;
+    margin: 50px auto 0 auto;
+}
+
+.col-centered-separator:after {
+    content: "or";
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    width: 20px;
+    margin-left: -18px;
+    background: white;
+    font-weight: bold;
+    padding: 10px;
+}

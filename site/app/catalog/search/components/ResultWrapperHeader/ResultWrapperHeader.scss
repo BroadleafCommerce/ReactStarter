@@ -1,0 +1,19 @@
+.ResultWrapperHeader {
+
+    .ResultWrapperHeader__container {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .ResultWrapperHeader__title {
+        margin-bottom: initial;
+        display: inline-block;
+    }
+
+    .ResultWrapperHeader__results-counter {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+}

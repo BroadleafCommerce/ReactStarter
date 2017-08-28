@@ -1,0 +1,1 @@
+export { getBreadcrumbs } from './breadcrumbSelectors'

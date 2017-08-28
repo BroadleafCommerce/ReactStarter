@@ -1,0 +1,34 @@
+
+
+.Footer {
+    width: 100%;
+    
+    .SocialMedia > a {
+        padding: 12px 4% 12px 4% !important;
+    }
+
+    ul li a {
+        color: #3e3947 !important;
+    }
+
+    ul li a:hover {
+        text-shadow: #aaaaaa 0 0 1px;
+    }
+
+    .Brand {
+        display: table;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .Brand p {
+        display: table-cell;
+        vertical-align: middle;
+        padding-top: 1em;
+    }
+
+    ul li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

@@ -1,0 +1,40 @@
+
+.PromoCodes {
+
+    .PromoCodes__heading {
+        padding: 0;
+        border: none;
+        display: flex;
+
+        a {
+            flex: 1;
+        }
+    }
+
+    .PromoCodes__title {
+        border-bottom: 1px solid #ccc;
+        margin: 0;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        display: inline-block;
+        font-weight: 500;
+        width: 100%;
+    }
+
+    .PromoCodes__body {
+        padding: 0 1em 1em 1em;
+    }
+
+    .PromoCodes__applied .PromoCodes__applied__code {
+        font-weight: normal;
+        font-size: 12px;
+        margin-right: 5px;
+        padding: 5px 6px 5px 12px;
+    }
+
+    .PromoCodes__applied i {
+        font-size: 20px;
+        margin-top: -0.15em;
+        color: #FFFFFF;
+    }
+}

@@ -1,0 +1,68 @@
+@import 'layout/style/common.scss';
+
+.Form {
+    padding: 20px;
+    font: 16px/16px 'Open Sans', Helvetica, sans-serif;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.Field {
+    margin-bottom: 20px;
+    padding: 0 10px;
+    flex: 1 1 auto;
+
+
+    .Field__label {
+        font: 14px/18px 'Open Sans',Helvetica,sans-serif;
+        font-weight: 600;
+    }
+
+    .Field__input {
+        font-size: 18px;
+        padding: 8px;
+        outline: none;
+        display: block;
+        border: 2px solid $lightgrey;
+        width: 100%;
+
+        &:disabled {
+            color: $lightgrey;
+        }
+    }
+
+    .Field__checkbox {
+        font-size: 18px;
+        padding: 8px;
+        outline: none;
+        display: inline-block;
+        border: 2px solid $lightgrey;
+    }
+
+    .Field__error {
+        color: $red;
+        margin: 0 10px;
+    }
+}
+
+.FieldGroup {
+    padding: 5px 0;
+    align-self: flex-start;
+    width: 100%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    button[type="submit"] {
+        @extend .Button--green;
+        flex: 0 1 auto;
+        align-self: flex-start;
+        margin: 0;
+    }
+}
+
+.FormError {
+    color: $red;
+    margin: 0 10px;
+}

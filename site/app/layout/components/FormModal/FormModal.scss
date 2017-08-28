@@ -1,0 +1,14 @@
+@import 'layout/style/common.scss';
+
+.FormModal {
+    @extend .Modal;
+
+    .FormModal__content {
+        @extend .Modal__content;
+        width: 400px;
+
+        .FormModal__content__form {
+            padding: 20px;
+        }
+    }
+}

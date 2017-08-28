@@ -1,0 +1,21 @@
+
+:global {
+    .configure-row {
+        margin-bottom: 1em;
+        .configure-title {
+            padding: 0;
+        }
+    }
+
+    .item-price {
+        text-align: right;
+    }
+    .item-price span:not(.item-price-span) {
+        padding: 1em;
+        font-weight: bold;
+    }
+
+    .configure-row .out-of-stock {
+        text-align: right;
+    }
+}

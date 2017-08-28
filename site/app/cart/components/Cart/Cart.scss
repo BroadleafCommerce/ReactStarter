@@ -1,0 +1,50 @@
+
+.Cart {
+    background-color: #f2f2f2;
+}
+
+.Cart__emptyMessage {
+    text-align: center;
+
+    & > * {
+        display: inline-block;
+    }
+
+    & > h1 {
+        font-size: 2.6em;
+        margin-bottom: 0.5em;
+    }
+}
+
+.Cart__itemSummary {
+    padding: 0;
+    font-size: small;
+    line-height: 16px;
+
+    .Cart__itemSummary__title {
+        font-weight: bold;
+        border-bottom: 1px solid #ccc;
+
+        & > h4 {
+            margin: 0;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        & > a {
+            padding: 8px 15px;
+            margin: 7px 0;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        & > li {
+            width: 100%;
+        }
+    }
+}

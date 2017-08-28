@@ -1,0 +1,9 @@
+@import 'layout/style/common.scss';
+
+.Overlay {
+    @extend .Modal;
+
+    .Container {
+        @extend .Modal__content;
+    }
+}

@@ -1,0 +1,11 @@
+
+.HeaderControls {
+    & > li {
+        display: inline-block;
+        float: none; // disable float so verticle alignment happens
+    }
+
+    .HeaderControls__accountActions {
+        padding: 15px 0;
+    }
+}

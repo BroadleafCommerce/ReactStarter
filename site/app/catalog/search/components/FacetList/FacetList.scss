@@ -1,0 +1,12 @@
+.FacetList {
+    display : flex;
+    flex-flow : column nowrap;
+    padding : 10px;
+}
+
+.FacetList__facet-header {
+    flex : 0 1 0;
+    margin : 0 0 20px 0;
+    font-size : 21px;
+    font: 21px/21px 'Oxygen', Helvetica, sans-serif;
+}

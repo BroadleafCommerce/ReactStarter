@@ -1,0 +1,45 @@
+
+
+.ShippingInfoForm {
+
+    :global {
+        .form-group {
+            margin: 1em 0 0 0;
+        }
+    }
+
+
+    ul.ChooseAddress {
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+        li:hover {
+            box-shadow: 0 14px 26px -12px rgba(#999999, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(#999999, 0.2);
+        }
+        li.active {
+            margin: -1px -1px 9px;
+            border: 2px solid #9c27b0;
+        }
+        li.active:hover {
+            box-shadow: 0 14px 26px -12px rgba(#9c27b0, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(#9c27b0, 0.2);
+        }
+        li .btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 0;
+        }
+
+        li > div {
+            padding: 0 1em;
+        }
+    }
+}

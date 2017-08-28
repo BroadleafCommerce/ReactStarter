@@ -1,0 +1,43 @@
+:global {
+    .total-reviews {
+        margin-bottom: 30px;
+    }
+    .your-review-body {
+        padding-left: 20px;
+    }
+
+    .your-review h4 {
+        margin-top: 0;
+    }
+
+    .customer-reviews {
+        list-style: none;
+        padding-left: 20px;
+    }
+
+    .customer-reviews li {
+        margin-bottom: 1em;
+    }
+
+    .rating-cancel {
+        display: none !important;
+    }
+
+    #new-rating-form {
+        margin-left: 20px;
+    }
+
+    .star-radio {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .your-review-body, .customer-reviews {
+            padding-left: 0;
+        }
+
+        #new-rating-form {
+            margin-left: 0;
+        }
+    }
+}

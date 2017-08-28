@@ -1,0 +1,21 @@
+.Confirmation {
+    background-color: #f2f2f2;
+    padding-top: 20px;
+
+    .Confirmation__stageTitle {
+        font-weight: bold;
+        border-bottom: 1px solid #ccc;
+
+        h4 {
+            margin: 0;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            display: inline-block;
+            font-weight: 500;
+
+            i {
+                vertical-align: text-bottom;
+            }
+        }
+    }
+}

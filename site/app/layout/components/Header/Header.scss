@@ -1,0 +1,19 @@
+.Header {
+    font: 15px/28px 'Open Sans',Helvetica,sans-serif;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header__logo, .Header__left, .Header__right {
+    padding: 0 20px;
+    white-space: nowrap;
+    flex: 0 1 25%;
+    float: none;
+}
+
+.Header__logo {
+    flex: 1 0 auto;
+    max-width: 20%;
+}

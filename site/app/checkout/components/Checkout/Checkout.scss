@@ -1,0 +1,17 @@
+
+.Checkout {
+    background-color: #f2f2f2;
+
+    .Checkout__emptyMessage {
+        text-align: center;
+
+        & > * {
+            display: inline-block;
+        }
+
+        & > h1 {
+            font-size: 2.6em;
+            margin-bottom: 0.5em;
+        }
+    }
+}

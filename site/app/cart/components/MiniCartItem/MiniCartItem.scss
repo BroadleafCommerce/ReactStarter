@@ -1,0 +1,26 @@
+
+.MiniCartItem {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 5px 10px;
+
+    .MiniCartItem__image {
+        flex: 0 1 7em;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .MiniCartItem__content {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        flex: 0 1 16em;
+        padding-left: 1em;
+
+        .name {
+            font-weight: bold;
+            width: 17em;
+        }
+    }
+}

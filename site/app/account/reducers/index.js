@@ -1,0 +1,5 @@
+export {default as orderHistory} from './orderHistoryReducer'
+export {default as customer} from './customerReducer'
+export {default as customerAddresses} from './customerAddressesReducer'
+export {default as customerPayments} from './customerPaymentsReducer'
+export {default as wishlist} from './wishlistReducer'

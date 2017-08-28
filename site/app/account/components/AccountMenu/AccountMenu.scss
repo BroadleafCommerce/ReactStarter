@@ -1,0 +1,30 @@
+
+
+.AccountMenu {
+    padding: 15px;
+    margin-top: 0;
+
+    .AccountMenu__collapse {
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+    hr {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .AccountMenu__header {
+        font-weight: 400;
+    }
+
+    .AccountMenu__AccountLink {
+
+    }
+
+    .AccountMenu__AccountLink--active {
+
+    }
+}

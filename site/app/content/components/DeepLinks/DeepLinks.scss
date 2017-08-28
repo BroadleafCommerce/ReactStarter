@@ -1,0 +1,34 @@
+@import 'layout/style/common.scss';
+
+.DeepLinks {
+    position: absolute;
+    top: -1;
+    left: -1;
+    right: -1;
+    bottom: -1;
+    z-index: 12;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    border: dashed 2px #333;
+    pointer-events: none;
+
+    .DeepLinks__content {
+        position: absolute;
+        text-align: left;
+        z-index: 9;
+        pointer-events: all;
+
+        .DeepLinks__content__link {
+            background: #333;
+        	margin-right: 5px;
+        	padding: 5px;
+        	border-right: 2px solid #EEE;
+            border-bottom: 2px solid #EEE;
+        	line-height: 20px;
+        	font: 11px 'Open Sans', Helvetica, sans-serif;
+            color: #EEE;
+        }
+    }
+}

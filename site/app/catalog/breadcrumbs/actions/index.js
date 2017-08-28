@@ -1,0 +1,1 @@
+export { fetchBreadcrumbs } from './breadcrumbActions'

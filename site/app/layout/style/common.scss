@@ -1,0 +1,111 @@
+@import 'layout/style/variables.scss';
+
+.Button {
+    font : 16px/16px 'Open Sans', Helvetica, sans-serif;
+    font-weight : 600;
+    margin : 10px auto 0;
+    padding : 15px 35px;
+    display : inline-block;
+    border : 0;
+    border-radius : 10px;
+    text-transform : uppercase;
+    text-decoration : none;
+    outline : none;
+    box-shadow: 0 2px 1px 2px rgba(0,0,0,0.2);
+    &:hover:not(:disabled) {
+        cursor: pointer;
+    }
+    &:disabled {
+        background-color : #bbafae;
+        transition: background-color 300ms linear;
+    }
+}
+
+.Button--red {
+    @extend .Button;
+    color : white;
+    background-color : $red;
+    &:focus:active  {
+        background-color: darken($red, 10%);
+    }
+}
+
+.Button--green {
+    @extend .Button;
+    color : white;
+    background-color : $green;
+    &:focus:active  {
+        background-color: darken($green, 10%);
+    }
+}
+
+.Form {
+    padding: 20px;
+    font: 16px/16px 'Open Sans', Helvetica, sans-serif;
+
+    .Form__field {
+        margin-bottom: 20px;
+        padding: 0 10px;
+        width: 100%;
+        display: inline-block;
+
+        .Form__field__label {
+            font: 14px/18px 'Open Sans',Helvetica,sans-serif;
+            font-weight: 600;
+        }
+
+        .Form__field__input {
+            font-size: 18px;
+            padding: 8px;
+            outline: none;
+            width: 100%;
+            border: 2px solid $lightgrey;
+        }
+
+        .Form__field__error {
+            color: $red;
+            margin: 0 10px;
+        }
+    }
+}
+
+.Modal {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    text-align: center;
+
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        margin-right: -4px;
+        pointer-events: none;
+    }
+
+    .Modal__content {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 auto;
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        z-index: 1001;
+
+        background-color: lighten($canvas, 10%);
+        border-radius: 5px;
+        box-shadow: 0 2px 2px 1px rgba(0,0,0,0.2);
+
+        text-align: left;
+        pointer-events: all;
+    }
+}

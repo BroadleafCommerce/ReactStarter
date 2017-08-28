@@ -1,0 +1,80 @@
+
+.OrderHistoryDetails {
+    background-color: #fafafa;
+    padding: 10px;
+
+    h5 {
+        background-color: #e8e8e8;
+        padding: 5px;
+        font-size: 16px;
+    }
+
+    h6 {
+        margin-bottom: 5px;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .OrderHistoryDetails__items, .OrderHistoryDetails__summary {
+        width: 100%;
+
+        tr {
+            background-color: transparent;
+            padding: 5px;
+        }
+
+        @media (min-width: 769px) {
+            tr {
+                animation-name: tr-hover-off;
+                animation-duration: 200ms;
+            }
+
+            tr:hover {
+                background-color: #EEEEEE;
+                animation-name: tr-hover-on;
+                animation-duration: 200ms;
+            }
+        }
+
+        @media (max-width: 768px) {
+            tr:nth-of-type(2n-1) {
+                background-color: #EEEEEE;
+            }
+        }
+    }
+
+    .OrderHistoryDetails__promotionRow {
+        float: right;
+        padding: 0 1em;
+    }
+
+    .OrderHistoryDetails__merchandiseTotal {
+        border-top: solid 1px #CCCCCC;
+    }
+
+    .OrderHistoryDetails__grantTotal {
+        border-top: solid 1px #AAAAAA;
+        font-weight: 300;
+    }
+
+    .OrderHistoryDetails__price {
+        text-align: right;
+    }
+
+    .OrderHistoryDetails__paymentMethod {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@keyframes tr-hover-on {
+    from { background-color: transparent; }
+    to { background-color: #EEEEEE; }
+}
+
+@keyframes tr-hover-off {
+    from { background-color: #EEEEEE; }
+    to { background-color: transparent; }
+}

@@ -1,0 +1,54 @@
+
+.CartPricingSummary {
+    margin-bottom: 15px;
+    overflow: hidden;
+
+    .CartPricingSummary__title {
+        font-weight: bold;
+        border-bottom: 1px solid #ccc;
+
+        h4 {
+            margin: 0;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            display: inline-block;
+            font-weight: 500;
+        }
+    }
+
+    .CartPricingSummary__breakdown {
+        padding: 10px 20px;
+    }
+
+    .CartPricingSummary__estimatedTotal, .CartPricingSummary__total {
+        font-weight: bold;
+        border-top: 1px solid rgb(150, 150, 150);
+        margin-top: 1em;
+        padding-top: 1em;
+    }
+
+    .CartPricingSummary__estimatedTotal p {
+        font-weight: normal;
+        font-size: smaller;
+        line-height: normal;
+        text-transform: none;
+        color: rgb(150, 150, 150);
+    }
+
+    .CartPricingSummary__actions {
+        text-align: center;
+        font-weight: bold;
+        padding-top: 1em;
+        border-top: 1px solid rgb(150, 150, 150);
+        margin-top: 2em;
+
+        a {
+            width: 100%;
+        }
+
+        .Divider {
+            padding: 0 0 0.7em;
+            font-size: smaller;
+        }
+    }
+}

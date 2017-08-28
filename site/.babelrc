@@ -1,0 +1,47 @@
+{
+    "presets" : ["es2015","react","stage-2"],
+    "plugins" : [
+        "lodash",
+        "transform-decorators-legacy",
+        ["module-resolver", {
+            "root": ["./app"],
+            "alias": {
+                "catalog": "./catalog",
+                "core": "./core",
+                "server": "./server",
+                "client": "./client",
+                "menu": "./menu",
+                "layout": "./layout",
+            },
+            "extensions" : [".js", ".css", ".scss"],
+        }],
+    ],
+    "env" : {
+        "production" : {
+            "plugins" : [
+                ["react-css-modules", {
+                    "generateScopedName" : "[name]__[local]___[hash:base64:5]",
+                    "filetypes" : {
+                        ".scss": {
+                            "syntax": "postcss-scss"
+                        }
+                    }
+                }],
+            ]
+        },
+        "development" : {
+            "plugins" : [
+                "react-hot-loader/babel",
+                ["react-css-modules", {
+                    "webpackHotModuleReloading" : true,
+                    "generateScopedName" : "[local]___[hash:base64:5]",
+                    "filetypes" : {
+                        ".scss": {
+                            "syntax": "postcss-scss"
+                        }
+                    }
+                }],
+            ],
+        }
+    }
+}

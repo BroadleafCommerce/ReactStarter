@@ -1,0 +1,38 @@
+
+.CheckoutStages {
+
+    :global {
+        .form-group .text-danger {
+            margin-top: -5px;
+            font-size: 11px;
+            position: absolute;
+            line-height: 12px;
+        }
+    }
+
+    .CheckoutStages__title {
+        font-weight: bold;
+        border-bottom: 1px solid #ccc;
+
+        h4 {
+            margin: 0;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            display: inline-block;
+            font-weight: 500;
+
+            i {
+                vertical-align: text-bottom;
+            }
+        }
+
+        .Edit {
+            padding: 8px 15px;
+            margin: 7px 0;
+        }
+    }
+
+    .CheckoutStages__stage {
+        padding: 10px 20px;
+    }
+}

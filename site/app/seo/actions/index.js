@@ -1,0 +1,1 @@
+export { fetchSeoProperties } from './seoActions'

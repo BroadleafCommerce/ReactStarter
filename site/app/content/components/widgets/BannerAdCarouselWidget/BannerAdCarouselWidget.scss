@@ -1,0 +1,46 @@
+@import 'layout/style/common.scss';
+
+.BannerAdCarouselWidget {
+    position: relative;
+    min-height: 230px;
+
+    .BannerAdCarouselWidget__image {
+        width: 100%;
+    }
+
+    .BannerAdCarouselWidget__headerContainer {
+        position: absolute;
+        width: 600px;
+        height: 45px;
+        top: 0;
+        left: 0;
+
+        .BannerAdCarouselWidget__header {
+            font-family: verdana;
+            font-weight: normal;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            color: rgb(255, 255, 255);
+            line-height: 45px;
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
+        .BannerAdCarouselWidget__subheading {
+            font-family: verdana;
+            font-weight: normal;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 40px;
+            left: 0;
+            color: rgb(245, 237, 240);
+            line-height: 15px;
+            font-size: 16px;
+            padding-left: 10px;
+        }
+    }
+}

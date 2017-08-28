@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  Reference Site Core
+  %%
+  Copyright (C) 2009 - 2016 Broadleaf Commerce
+  %%
+  Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
+  (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
+  unless the restrictions on use therein are violated and require payment to Broadleaf in which case
+  the Broadleaf End User License Agreement (EULA), Version 1.1
+  (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+  shall apply.
+  
+  Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
+  between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+  #L%
+  -->
+
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+    <logger name="org.broadleafcommerce" level="INFO"/>
+    <logger name="com.broadleafcommerce" level="INFO"/>
+    <logger name="org.broadleafcommerce.common.extensibility.FrameworkXmlBeanDefinitionReader" level="WARN"/>
+    <logger name="org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer" level="INFO"/>
+    <logger name="org.springframework.boot.SpringApplication" level="INFO"/>
+    <logger name="org.hibernate.cache.ehcache.internal.strategy.AbstractReadWriteEhcacheAccessStrategy" level="ERROR"/>
+
+    <!-- Remove when https://github.com/BroadleafCommerce/QA/issues/115 is resolved; this is to repress some very noisy
+            warn-level logging in this component  -->
+    <logger name="org.hibernate.engine.internal.StatefulPersistenceContext" level="ERROR"/>
+
+    <!-- Enable this appender and logger for workflow log functionality. This is highly recommended for production. -->
+    <!--<property name="WORKFLOW_LOG_FILE" value="${WORKFLOW_LOG_FILE:-${java.io.tmpdir:-/tmp}/blc-logs/workflow.log}"/>-->
+    <!--<appender name="rollingDailyEnterpriseWorkflow" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+       <!--<file>${WORKFLOW_LOG_FILE}</file>-->
+       <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+           <!--&lt;!&ndash; daily rollover &ndash;&gt;-->
+           <!--<fileNamePattern>${WORKFLOW_LOG_FILE}.%d{yyyy-MM-dd-HH-mm}.log</fileNamePattern>-->
+           <!--<maxHistory>30</maxHistory>-->
+       <!--</rollingPolicy>-->
+
+       <!--<encoder>-->
+           <!--<pattern>[%-5level] %d{MM-dd-yyyy HH:mm:ss} %logger{35} - %message%n</pattern>-->
+       <!--</encoder>-->
+    <!--</appender>-->
+
+    <!--<logger name="com.broadleafcommerce.enterprise.workflow.process.detail" level="DEBUG">-->
+       <!--<appender-ref ref="rollingDailyEnterpriseWorkflow"/>-->
+    <!--</logger>-->
+</configuration>

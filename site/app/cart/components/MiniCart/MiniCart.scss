@@ -1,0 +1,96 @@
+
+.MiniCart__toggle {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    padding: 15px;
+    color: #000;
+    z-index: 1051;
+    margin-top: 1px;
+
+    &:hover, &:focus {
+        color: inherit;
+    }
+
+    & > i {
+        pointer-events: none;
+        font-size: 20px;
+        padding: 3px 0;
+    }
+
+    & > span {
+        position: relative;
+        pointer-events: none;
+        font-size: 12px;
+        background-color: #333;
+        color: white;
+        border-radius: 50%;
+        padding: 3px 8px;
+    }
+}
+
+.MiniCart__toggle--active {
+    @extend .MiniCart__toggle;
+    box-shadow: 0 2px 0 #fff, 0 0 2px rgba(0, 0, 0, 0.26);
+    background-color: white !important;
+    z-index: 1052;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.MiniCart__overlay {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1049;
+}
+
+.MiniCart__dropdown {
+    position: fixed;
+    background-color: white;
+    width: 350px;
+    z-index: 1050;
+    box-sizing: border-box;
+    max-height: 85vh;
+    overflow-x: auto;
+    overflow-y: scroll;
+
+    & > li {
+        padding: 1em 1em;
+    }
+
+    .MiniCart__dropdown__subTotal {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: large;
+        display: block;
+
+        & > div {
+            border-top: 1px solid;
+            border-bottom: 1px solid;
+            padding: 1.5em;
+        }
+    }
+
+    .MiniCart__dropdown__action {
+        display: block;
+
+        & > a {
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 1em !important;
+        }
+    }
+
+    .MiniCart__dropdown__empty {
+        text-transform: uppercase;
+        text-align: center;
+        display: block;
+        padding: 1em;
+        font-weight: 500;
+    }
+}

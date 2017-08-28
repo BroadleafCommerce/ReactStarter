@@ -1,0 +1,49 @@
+@import 'layout/style/common.scss';
+
+.Facet {
+    flex : 0 1 0;
+    max-width : 250px;
+    font-size : 18px;
+    margin-bottom : 20px;
+    padding : 10px;
+
+    border : 1px solid $lightgrey;
+    border-radius : 8px;
+    font-family: 'Oxygen', Helvetica, sans-serif;
+}
+
+.Facet__label {
+    display : inline-block;
+    padding : 5px;
+    font-size : 20px;
+    margin : 0;
+}
+
+.Facet__link {
+    display : block;
+    color : $black-primary;
+    padding : 7px;
+    background-color : #efefef;
+    margin : 5px;
+}
+
+.Facet__active-text {
+    display : block;
+    color : $black-primary;
+    margin : 5px;
+}
+
+.Facet__multiselectLink {
+    color: $green;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.Facet__removeLink {
+    color : $red;
+    font-size: 14px;
+    display : inline-block;
+    vertical-align: middle;
+}

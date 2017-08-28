@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.broadleafcommerce</groupId>
+        <artifactId>broadleaf-boot-starter-parent</artifactId>
+        <version>5.2.1-SNAPSHOT</version>
+        <relativePath />
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany</groupId>
+    <artifactId>boot-react-starter</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Broadleaf Spring Boot React Starter</name>
+    <url>http://www.blc-archetype.com</url>
+
+    <repositories>
+        <repository>
+            <id>public snapshots</id>
+            <name>public snapshots</name>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/groups/community-snapshots/</url>
+        </repository>
+        <repository>
+            <id>public releases</id>
+            <name>public releases</name>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/groups/community-releases/</url>
+        </repository>
+    </repositories>
+
+    <properties>
+        <broadleaf-api-authentication.version>1.0.0-SNAPSHOT</broadleaf-api-authentication.version>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        
+        <debug.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=${debug.port}</debug.args>
+        <boot.jvm.memory>-Xmx1536M</boot.jvm.memory>
+        <boot.jvm.args>${boot.jvm.memory} ${debug.args}</boot.jvm.args>
+        
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.uri>${project.baseUri}</project.uri>
+    </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/framework-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>releases</id>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/framework-releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <jvmArguments>${boot.jvm.args}</jvmArguments>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.zeroturnaround</groupId>
+                <artifactId>jrebel-maven-plugin</artifactId>
+                <version>1.1.7</version>
+                <executions>
+                    <execution>
+                        <id>generate-rebel-xml</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <profiles>
+        <profile>
+            <id>jrebel</id>
+            <properties>
+                <boot.jvm.args>${boot.jvm.memory} ${debug.args} ${jrebel.agent.args}</boot.jvm.args>
+            </properties>
+        </profile>
+    </profiles>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.mycompany</groupId>
+                <artifactId>boot-react-starter-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.broadleafcommerce</groupId>
+                <artifactId>broadleaf-api-authentication</artifactId>
+                <version>${broadleaf-api-authentication.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>admin</module>
+        <module>core</module>
+        <module>api</module>
+    </modules>
+
+</project>
