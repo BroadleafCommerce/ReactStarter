@@ -1,4 +1,6 @@
 var path = require('path');
+var opn = require('opn');
+var chalk = require('chalk');
 var webpack = require('webpack');
 var express = require('express');
 var cookieParser = require('cookie-parser');
@@ -16,13 +18,19 @@ app.use(cookieParser());
 
 var compiler = webpack(config);
 
-app.use(devMiddleware(compiler, {
+var devWebpackMiddleware = devMiddleware(compiler, {
     publicPath: config.output.publicPath,
     historyApiFallback: true,
     hot: true,
-}));
+    quiet: true,
+})
 
-app.use(hotMiddleware(compiler));
+app.use(devWebpackMiddleware);
+
+app.use(hotMiddleware(compiler, {
+    log: false,
+    heartbeat: 2000,
+}));
 
 app.use('/vendor', express.static(path.join(__dirname, 'app/vendor')))
 
@@ -61,10 +69,17 @@ app.get('*', function (req, res) {
     res.send(renderFullPage('', {}, locale));
 });
 
-app.listen(3000, function (err) {
-  if (err) {
-    return console.error(err);
-  }
+var port = process.env.PORT || 3000
+var uri = 'http://localhost:' + port 
 
-  console.log('Listening at http://localhost:3000/');
+app.listen(3000, function (err) {
+    if (err) {
+        return console.error(err);
+    }
+
+    console.log(chalk.green('> Starting dev server'));
+    devWebpackMiddleware.waitUntilValid(() => {
+        console.log(chalk.green('> Listening at ' + uri + '\n'));
+        opn(uri)
+    });
 });
