@@ -62,22 +62,6 @@ public class AdminConfig {
         return Arrays.asList("classpath:bl-override-ehcache-admin.xml");
     }
 
-    /**
-     * Setup the "blEventPU" entity manager on the request thread using the entity-manager-in-view pattern
-     *
-     * @return
-     */
-    @Bean
-    public FilterRegistrationBean openEventEntityManagerInViewFilterFilterRegistrationBean() {
-        FilterRegistrationBean registrationBean = new FilterRegistrationBean();
-        OpenEntityManagerInViewFilter openEventEntityManagerInViewFilter = new IgnorableOpenEntityManagerInViewFilter();
-        openEventEntityManagerInViewFilter.setEntityManagerFactoryBeanName("blEntityManagerFactoryEventInfo");
-        registrationBean.setFilter(openEventEntityManagerInViewFilter);
-        registrationBean.setName("openEventEntityManagerInViewFilter");
-        registrationBean.setOrder(FilterOrdered.PRE_SECURITY_HIGH);
-        return registrationBean;
-    }
-
 
     /**
      * Spring Boot does not support the configuration of both an HTTP connector and an HTTPS connector via properties.
