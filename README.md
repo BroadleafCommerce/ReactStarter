@@ -45,7 +45,7 @@ Starting up the `site` application requires you to install the dependencies and 
    > yarn develop
 ```
 
-##### Running the `admin` application
+### Running the `admin` application
 ```
    > cd admin
    > mvn spring-boot:run
