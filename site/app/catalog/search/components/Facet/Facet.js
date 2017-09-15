@@ -94,9 +94,7 @@ class FacetContainer extends PureComponent {
 
         if (search[fieldName] === undefined) {
             search[fieldName] = [key]
-        }
-
-        if (!Array.isArray(search[fieldName])) {
+        } else if (!Array.isArray(search[fieldName])) {
             search[fieldName] = [key, search[fieldName]]
         } else {
             search[fieldName] = [key, ...search[fieldName]]
