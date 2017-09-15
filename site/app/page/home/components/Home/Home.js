@@ -13,19 +13,9 @@ import './Home.scss'
 
 const Home = ({
     isFetching,
-    pageFields,
     results,
     seoProperties,
 }) => {
-
-    const hasPageFields = !isEmpty(pageFields)
-
-    const productsTitle = (
-        <h3 className='text-center'>
-            {hasPageFields ? pageFields['productTitle'] : `The Heat Clinic's Top Selling Sauces`}
-        </h3>
-    )
-
     const resultList = (
         <ResultList
             numberPerRow={4}
@@ -75,7 +65,9 @@ const Home = ({
                 <hr/>
 
                 <div className='row'>
-                    {productsTitle}
+                    <h3 className='text-center'>
+                        {`The Heat Clinic's Top Selling Sauces`}
+                    </h3>
                     {resultList}
                 </div>
             </div>
