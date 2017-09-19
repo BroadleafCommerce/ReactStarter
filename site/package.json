@@ -1,11 +1,11 @@
 {
   "name": "boot-react-starter",
-  "version": "5.2.0",
+  "version": "1.0.0",
   "description": "React Starter",
   "main": "./webpack-server.js",
-  "repository": "https://github.com/BroadleafCommerce/ReferenceSite.git",
+  "repository": "https://github.com/BroadleafCommerce/ReactStarter.git",
   "author": "ncrum",
-  "license": "MIT",
+  "license": "Apache 2.0",
   "scripts": {
     "develop": "node -r dotenv/config webpack-server.js dotenv_config_path=config/development.env",
     "build-server": "NODE_ENV=production webpack --config webpack-production-server.config.js",

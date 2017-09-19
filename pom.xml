@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.broadleafcommerce</groupId>
         <artifactId>broadleaf-boot-starter-parent</artifactId>
-        <version>5.2.2-SNAPSHOT</version>
+        <version>5.2.3-SNAPSHOT</version>
         <relativePath />
     </parent>
 
@@ -15,7 +15,16 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Broadleaf Spring Boot React Starter</name>
-    <url>http://www.blc-archetype.com</url>
+    <url>http://www.blc-archetype.com</url>    
+    
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
 
     <repositories>
         <repository>
@@ -44,17 +53,6 @@
         <project.uri>${project.baseUri}</project.uri>
     </properties>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/framework-snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>releases</id>
-            <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/framework-releases/</url>
-        </repository>
-    </distributionManagement>
-
     <build>
         <pluginManagement>
             <plugins>
@@ -65,6 +63,7 @@
                         <jvmArguments>${boot.jvm.args}</jvmArguments>
                     </configuration>
                 </plugin>
+
             </plugins>
         </pluginManagement>
         <plugins>
@@ -79,6 +78,55 @@
                         <goals>
                             <goal>generate</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>1.5</version>
+                <configuration>
+                    <verbose>false</verbose>
+                    <addSvnKeyWords>false</addSvnKeyWords>
+                    <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
+                    <organizationName>Broadleaf Commerce</organizationName>
+                    <inceptionYear>2009</inceptionYear>
+                    <licenseName>blc_apache</licenseName>
+                    <licenseResolver>${project.uri}/licenses</licenseResolver>
+                    <excludes>
+                        <exclude>**/*.sql</exclude>
+                        <exclude>**/*.html</exclude>
+                        <exclude>**/*font-awesome*</exclude>
+                        <exclude>**/*jquery*</exclude>
+                        <exclude>**/*modernizr*</exclude>
+                        <exclude>**/*responsive-tables*</exclude>
+                        <exclude>**/spectrum.css</exclude>
+                        <exclude>**/spectrum.js</exclude>
+                        <exclude>**/redactor.js</exclude>
+                        <exclude>**/fontcolor.js</exclude>
+                        <exclude>**/fontsize.js</exclude>
+                        <exclude>**/typeahead.bundle.js</exclude>
+                        <exclude>**/sitemap/**/*.xml</exclude>
+                        <exclude>**/bootstrap*.css</exclude>
+                        <exclude>**/carousel*.css</exclude>
+                        <exclude>**/*.json</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>first</id>
+                        <goals>
+                            <goal>update-file-header</goal>
+                            <goal>update-project-license</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <roots>
+                                <root>src/main</root>
+                                <root>src/test</root>
+                                <root>app</root>
+                            </roots>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -110,8 +158,8 @@
     </dependencyManagement>
 
     <modules>
-        <module>admin</module>
         <module>core</module>
+        <module>admin</module>
         <module>api</module>
     </modules>
 

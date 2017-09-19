@@ -13,6 +13,10 @@
     <name>React Core Starter</name>
     <description>Customizations And Extensions For Broadleaf Commerce Services And Entities</description>
 
+    <properties>
+        <project.uri>${project.baseUri}/../</project.uri>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

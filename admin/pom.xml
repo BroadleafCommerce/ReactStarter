@@ -16,6 +16,7 @@
 
     <properties>
         <debug.port>8001</debug.port>
+        <project.uri>${project.baseUri}/../</project.uri>
     </properties>
     
     <build>

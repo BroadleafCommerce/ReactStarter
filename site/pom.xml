@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.mycompany</groupId>
+        <artifactId>boot-react-starter</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>boot-react-starter-site</artifactId>
+    <packaging>jar</packaging>
+
+    <name>React Site Starter</name>
+    <description>Site Module For Customized Broadleaf Commerce React Site</description>
+
+    <properties>
+        <project.uri>${project.baseUri}/../</project.uri>
+    </properties>
+    
+</project>
