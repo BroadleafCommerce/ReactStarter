@@ -17,7 +17,9 @@
  * limitations under the License.
  * #L%
  */
-import React, { Component } from 'react'
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { resolve } from 'core/decorator/reduxResolve'
 import { fetchContentItem } from 'content/actions'
@@ -45,16 +47,16 @@ import WidgetManager from 'content/service/WidgetManager'
  */
 class ContentZone extends Component {
     static propTypes = {
-        anonymous: React.PropTypes.bool,
-        isFetching: React.PropTypes.bool,
-        fetchContentItem: React.PropTypes.func,
-        name: React.PropTypes.string.isRequired,
-        component: React.PropTypes.string,
-        showDeepLinks: React.PropTypes.bool,
-        sc: React.PropTypes.object,
-        scs: React.PropTypes.array,
-        mcs: React.PropTypes.array,
-        children: React.PropTypes.func,
+        anonymous: PropTypes.bool,
+        isFetching: PropTypes.bool,
+        fetchContentItem: PropTypes.func,
+        name: PropTypes.string.isRequired,
+        component: PropTypes.string,
+        showDeepLinks: PropTypes.bool,
+        sc: PropTypes.object,
+        scs: PropTypes.array,
+        mcs: PropTypes.array,
+        children: PropTypes.func,
     }
 
     componentWillReceiveProps(nextProps) {

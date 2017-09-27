@@ -17,7 +17,9 @@
  * limitations under the License.
  * #L%
  */
-import React, {Component} from 'react'
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { resolve } from 'core/decorator/reduxResolve'
 import { fetchRelatedProducts } from 'catalog/relatedproduct/actions'
@@ -37,12 +39,12 @@ const RelatedProductList = ({
 
 class RelatedProductListContainer extends Component {
     static propTypes = {
-        headerText: React.PropTypes.string,
-        relatedProducts: React.PropTypes.array,
-        categoryKey: React.PropTypes.string,
-        productKey: React.PropTypes.string,
-        quantity: React.PropTypes.number,
-        type: React.PropTypes.string,
+        headerText: PropTypes.string,
+        relatedProducts: PropTypes.array,
+        categoryKey: PropTypes.string,
+        productKey: PropTypes.string,
+        quantity: PropTypes.number,
+        type: PropTypes.string,
     }
 
     componentWillReceiveProps(nextProps) {

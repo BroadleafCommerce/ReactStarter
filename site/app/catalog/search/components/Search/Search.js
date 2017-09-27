@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 /*
  * #%L
  * React Site Starter
@@ -17,7 +19,8 @@
  * limitations under the License.
  * #L%
  */
-import React, {Component} from 'react'
+import PropTypes from 'prop-types';
+
 import queryString from 'query-string'
 import SearchResults from 'catalog/search/components/SearchResults'
 import {SearchCapable} from 'catalog/search/decorator/searchCapable'
@@ -30,10 +33,10 @@ const getSearchParams = props => {
 @SearchCapable('/api/catalog/search', getSearchParams)
 export class Search extends Component {
     static propTypes = {
-        isFetching : React.PropTypes.bool,
-        location : React.PropTypes.object.isRequired,
-        metadata : React.PropTypes.object,
-        results : React.PropTypes.array,
+        isFetching : PropTypes.bool,
+        location : PropTypes.object.isRequired,
+        metadata : PropTypes.object,
+        results : PropTypes.array,
     }
 
     render() {

@@ -17,7 +17,9 @@
  * limitations under the License.
  * #L%
  */
-import React from 'react'
+import PropTypes from 'prop-types';
+
+import React from 'react';
 import { withRouter } from 'react-router-dom'
 import Breadcrumbs from 'catalog/breadcrumbs/components/Breadcrumbs'
 import ResultWrapperHeader from 'catalog/search/components/ResultWrapperHeader'
@@ -67,14 +69,14 @@ export const ResultWrapper = ({
 )
 
 ResultWrapper.propTypes = {
-    headerTitle : React.PropTypes.string,
-    isLoading : React.PropTypes.bool,
-    location : React.PropTypes.object,
-    metadata : React.PropTypes.shape({
-        page : React.PropTypes.number,
-        pageSize : React.PropTypes.number,
-        totalResults : React.PropTypes.number,
-        totalPages : React.PropTypes.number,
+    headerTitle : PropTypes.string,
+    isLoading : PropTypes.bool,
+    location : PropTypes.object,
+    metadata : PropTypes.shape({
+        page : PropTypes.number,
+        pageSize : PropTypes.number,
+        totalResults : PropTypes.number,
+        totalPages : PropTypes.number,
     }),
 }
 

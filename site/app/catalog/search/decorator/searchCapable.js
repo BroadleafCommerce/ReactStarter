@@ -1,3 +1,9 @@
+import React, { Component } from 'react';
+import isEqual from 'lodash/isEqual'
+import isEmpty from 'lodash/isEmpty'
+import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
+
 /*
  * #%L
  * React Site Starter
@@ -17,11 +23,8 @@
  * limitations under the License.
  * #L%
  */
-import React, {Component} from 'react'
-import isEqual from 'lodash/isEqual'
-import isEmpty from 'lodash/isEmpty'
-import {connect} from 'react-redux'
-import {withRouter} from 'react-router-dom'
+import PropTypes from 'prop-types';
+
 import queryString from 'query-string'
 import {resolve} from 'core/decorator/reduxResolve'
 import {fetchSearch} from 'catalog/search/actions'
@@ -78,16 +81,16 @@ export function SearchCapable(uri, getSearchParams) {
         })
         class DecoratedComponent extends Component {
             static propTypes = {
-                isFetching : React.PropTypes.bool,
-                location : React.PropTypes.object.isRequired,
-                metadata : React.PropTypes.shape({
-                    page : React.PropTypes.number,
-                    pageSize : React.PropTypes.number,
-                    totalResults : React.PropTypes.number,
-                    totalPages : React.PropTypes.number,
-                    searchFacet : React.PropTypes.array,
+                isFetching : PropTypes.bool,
+                location : PropTypes.object.isRequired,
+                metadata : PropTypes.shape({
+                    page : PropTypes.number,
+                    pageSize : PropTypes.number,
+                    totalResults : PropTypes.number,
+                    totalPages : PropTypes.number,
+                    searchFacet : PropTypes.array,
                 }),
-                results : React.PropTypes.array,
+                results : PropTypes.array,
             }
 
             componentWillReceiveProps(nextProps) {
@@ -108,5 +111,5 @@ export function SearchCapable(uri, getSearchParams) {
         }
 
         return DecoratedComponent;
-    }
+    };
 }
