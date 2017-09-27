@@ -32,9 +32,9 @@ function renderFullPage(html, state = {}, locale, initialNow = Date.now()) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="/vendor/css/bootstrap.css">
-        <link rel="stylesheet" href="/vendor/css/carousel.css">
-        <link rel="stylesheet" href="/api/theme/css/material-kit.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/react-responsive-carousel@3.1.26/lib/styles/carousel.css">
+        <link rel="stylesheet" href="/api/theme/css/material-kit-1.1.1.css">
         <link rel="stylesheet" href="/api/theme/css/material-kit-extensions.css">
         ${process.env.RENDER_ENV === 'server' ? '<link rel="stylesheet" href="/static/styles.css">' : ''}
     </head>

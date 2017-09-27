@@ -54,7 +54,6 @@ app.get('*.css', function(req, res, next) {
 });
 
 app.use('/static', express.static(path.join(__dirname, 'static')))
-app.use('/vendor', express.static(path.join(__dirname, 'vendor')))
 
 app.use('/cmsstatic', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
