@@ -17,7 +17,9 @@
  * limitations under the License.
  * #L%
  */
-import React from 'react'
+import PropTypes from 'prop-types';
+
+import React from 'react';
 import ResultListItem from 'catalog/search/components/ResultListItem'
 import './ResultList.scss'
 
@@ -35,8 +37,8 @@ export const ResultList = ({
 )
 
 ResultList.propTypes = {
-    numberPerRow: React.PropTypes.number,
-    results : React.PropTypes.arrayOf(React.PropTypes.object)
+    numberPerRow: PropTypes.number,
+    results : PropTypes.arrayOf(PropTypes.object)
 }
 
 export default ResultList

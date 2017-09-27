@@ -1,3 +1,7 @@
+import React from 'react';
+import range from 'lodash/range'
+import {Link} from 'react-router-dom'
+
 /*
  * #%L
  * React Site Starter
@@ -17,9 +21,8 @@
  * limitations under the License.
  * #L%
  */
-import React from 'react'
-import range from 'lodash/range'
-import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types';
+
 import queryString from 'query-string'
 import classNames from 'classnames'
 
@@ -39,13 +42,13 @@ export const ResultListFooter = ({
 )
 
 ResultListFooter.propTypes = {
-    isLoading : React.PropTypes.bool,
-    location : React.PropTypes.object,
-    metadata : React.PropTypes.shape({
-        page : React.PropTypes.number,
-        pageSize : React.PropTypes.number,
-        totalResults : React.PropTypes.number,
-        totalPages : React.PropTypes.number,
+    isLoading : PropTypes.bool,
+    location : PropTypes.object,
+    metadata : PropTypes.shape({
+        page : PropTypes.number,
+        pageSize : PropTypes.number,
+        totalResults : PropTypes.number,
+        totalPages : PropTypes.number,
     }),
 }
 

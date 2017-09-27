@@ -17,7 +17,9 @@
  * limitations under the License.
  * #L%
  */
-import React from 'react'
+import PropTypes from 'prop-types';
+
+import React from 'react';
 import RelatedProductList from 'catalog/relatedproduct/components/RelatedProductList'
 
 const RightHandRelatedProductWidget = ({
@@ -34,9 +36,9 @@ const RightHandRelatedProductWidget = ({
 )
 
 RightHandRelatedProductWidget.propTypes = {
-    sc: React.PropTypes.object,
-    categoryKey: React.PropTypes.string,
-    productKey: React.PropTypes.string,
+    sc: PropTypes.object,
+    categoryKey: PropTypes.string,
+    productKey: PropTypes.string,
 }
 
 

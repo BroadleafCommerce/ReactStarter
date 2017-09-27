@@ -40,7 +40,8 @@ const language = locale.substring(0, locale.indexOf('-'))
 addLocaleData(window.ReactIntlLocaleData[locale] || window.ReactIntlLocaleData[language])
 
 const render = Component => {
-    ReactDOM.render(
+    const reactDOMRender = process.env.NODE_ENV === 'development' ? ReactDOM.render : ReactDOM.hydrate
+    reactDOMRender(
         <AppContainer>
             <IntlProvider initialNow={parseInt(window.INITIAL_NOW, 10)} locale={locale} messages={messages}>
                 <Provider store={store}>
@@ -52,6 +53,7 @@ const render = Component => {
         </AppContainer>,
         document.querySelector('#root')
     )
+
 }
 
 render(Root)

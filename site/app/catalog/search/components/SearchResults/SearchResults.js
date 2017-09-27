@@ -17,7 +17,9 @@
  * limitations under the License.
  * #L%
  */
-import React, {Component} from 'react'
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import map from 'lodash/map'
 import isEqual from 'lodash/isEqual'
 import ResultWrapper from 'catalog/search/components/ResultWrapper'
@@ -27,16 +29,16 @@ import FacetList from 'catalog/search/components/FacetList'
 
 class SearchResults extends Component {
     static propTypes = {
-        location : React.PropTypes.object,
-        results : React.PropTypes.array,
-        metadata : React.PropTypes.shape({
-            page : React.PropTypes.number,
-            pageSize : React.PropTypes.number,
-            totalResults : React.PropTypes.number,
-            totalPages : React.PropTypes.number,
-            searchFacet : React.PropTypes.array,
+        location : PropTypes.object,
+        results : PropTypes.array,
+        metadata : PropTypes.shape({
+            page : PropTypes.number,
+            pageSize : PropTypes.number,
+            totalResults : PropTypes.number,
+            totalPages : PropTypes.number,
+            searchFacet : PropTypes.array,
         }),
-        headerTitle : React.PropTypes.string,
+        headerTitle : PropTypes.string,
     }
 
     static defaultProps = {

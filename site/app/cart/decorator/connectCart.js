@@ -17,7 +17,9 @@
  * limitations under the License.
  * #L%
  */
-import React, {Component} from 'react'
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import isEmpty from 'lodash/isEmpty'
 import isEqual from 'lodash/isEqual'
 import {connect} from 'react-redux'
@@ -48,19 +50,19 @@ export function connectExistingCart(DecoratingComponent) {
     })
     class DecoratedComponent extends Component {
         static propTypes = {
-            cart : React.PropTypes.shape({
-                itemCount : React.PropTypes.number,
-                id : React.PropTypes.number,
-                orderNumber : React.PropTypes.string,
-                orderItem : React.PropTypes.arrayOf(React.PropTypes.object)
+            cart : PropTypes.shape({
+                itemCount : PropTypes.number,
+                id : PropTypes.number,
+                orderNumber : PropTypes.string,
+                orderItem : PropTypes.arrayOf(PropTypes.object)
             }),
-            anonymous : React.PropTypes.bool,
-            addToCart : React.PropTypes.func,
-            addPromo : React.PropTypes.func,
-            invalidateCart : React.PropTypes.func,
-            removePromo : React.PropTypes.func,
-            removeFromCart : React.PropTypes.func,
-            updateQuantity : React.PropTypes.func,
+            anonymous : PropTypes.bool,
+            addToCart : PropTypes.func,
+            addPromo : PropTypes.func,
+            invalidateCart : PropTypes.func,
+            removePromo : PropTypes.func,
+            removeFromCart : PropTypes.func,
+            updateQuantity : PropTypes.func,
         }
 
         componentWillReceiveProps(nextProps) {
@@ -95,11 +97,11 @@ export function connectCartControls(mapStateToProps) {
         )
         class DecoratedComponent extends Component {
             static propTypes = {
-                isFetchingCart : React.PropTypes.bool,
-                anonymous : React.PropTypes.bool,
-                addToCart : React.PropTypes.func,
-                removeFromCart : React.PropTypes.func,
-                updateQuantity : React.PropTypes.func,
+                isFetchingCart : PropTypes.bool,
+                anonymous : PropTypes.bool,
+                addToCart : PropTypes.func,
+                removeFromCart : PropTypes.func,
+                updateQuantity : PropTypes.func,
             }
 
             render() {
@@ -108,5 +110,5 @@ export function connectCartControls(mapStateToProps) {
         }
 
         return DecoratedComponent
-    }
+    };
 }

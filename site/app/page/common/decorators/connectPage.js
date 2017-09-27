@@ -17,7 +17,9 @@
  * limitations under the License.
  * #L%
  */
-import React, {Component} from 'react'
+import PropTypes from 'prop-types';
+
+import React, { Component } from 'react';
 import isEmpty from 'lodash/isEmpty'
 import isEqual from 'lodash/isEqual'
 import {connect} from 'react-redux'
@@ -42,11 +44,11 @@ const connectPage = DecoratingComponent => {
 
     class DecoratedComponent extends Component {
         static propTypes = {
-            pageFields: React.PropTypes.object,
-            id: React.PropTypes.number,
-            url: React.PropTypes.string,
-            location: React.PropTypes.shape({
-                pathname: React.PropTypes.string
+            pageFields: PropTypes.object,
+            id: PropTypes.number,
+            url: PropTypes.string,
+            location: PropTypes.shape({
+                pathname: PropTypes.string
             })
         }
 

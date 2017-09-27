@@ -1,3 +1,7 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { resolve } from 'core/decorator/reduxResolve'
+
 /*
  * #%L
  * React Site Starter
@@ -17,9 +21,8 @@
  * limitations under the License.
  * #L%
  */
-import React, {Component} from 'react'
-import { connect } from 'react-redux'
-import { resolve } from 'core/decorator/reduxResolve'
+import PropTypes from 'prop-types';
+
 import queryString from 'query-string'
 import { Helmet } from 'react-helmet'
 import SearchResults from 'catalog/search/components/SearchResults'
@@ -38,11 +41,11 @@ const getSearchParams = props => {
 @SearchCapable('/api/catalog/search', getSearchParams)
 export class Category extends Component {
     static propTypes = {
-        isFetching : React.PropTypes.bool, // is currently fetching search data
-        location : React.PropTypes.object.isRequired,
-        match : React.PropTypes.object,
-        metadata : React.PropTypes.object, // search metadata
-        results : React.PropTypes.array, // search result list
+        isFetching : PropTypes.bool, // is currently fetching search data
+        location : PropTypes.object.isRequired,
+        match : PropTypes.object,
+        metadata : PropTypes.object, // search metadata
+        results : PropTypes.array, // search result list
     }
 
     componentWillReceiveProps(nextProps) {

@@ -1,3 +1,6 @@
+import React from 'react';
+import {Link, Route} from 'react-router-dom'
+
 /*
  * #%L
  * React Site Starter
@@ -17,8 +20,8 @@
  * limitations under the License.
  * #L%
  */
-import React from 'react'
-import {Link, Route} from 'react-router-dom'
+import PropTypes from 'prop-types';
+
 import queryString from 'query-string'
 import classNames from 'classnames'
 import './ResultWrapperHeader.scss'
@@ -41,14 +44,14 @@ export const ResultWrapperHeader = ({
 )
 
 ResultWrapperHeader.propTypes = {
-    headerTitle : React.PropTypes.string,
-    isLoading : React.PropTypes.bool,
-    location : React.PropTypes.object,
-    metadata : React.PropTypes.shape({
-        page : React.PropTypes.number,
-        pageSize : React.PropTypes.number,
-        totalResults : React.PropTypes.number,
-        totalPages : React.PropTypes.number,
+    headerTitle : PropTypes.string,
+    isLoading : PropTypes.bool,
+    location : PropTypes.object,
+    metadata : PropTypes.shape({
+        page : PropTypes.number,
+        pageSize : PropTypes.number,
+        totalResults : PropTypes.number,
+        totalPages : PropTypes.number,
     }),
 }
 
