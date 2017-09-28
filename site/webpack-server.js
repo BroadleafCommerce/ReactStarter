@@ -32,8 +32,6 @@ app.use(hotMiddleware(compiler, {
     heartbeat: 2000,
 }));
 
-app.use('/vendor', express.static(path.join(__dirname, 'app/vendor')))
-
 app.use('/cmsstatic', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
     forwardPath : function(req) {

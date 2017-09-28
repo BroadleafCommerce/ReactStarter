@@ -5,7 +5,7 @@
   "main": "./webpack-server.js",
   "repository": "https://github.com/BroadleafCommerce/ReactStarter.git",
   "author": "ncrum",
-  "license": "Apache-2.0",
+  "license": "CC0-1.0",
   "scripts": {
     "develop": "node -r dotenv/config webpack-server.js dotenv_config_path=config/development.env",
     "build-server": "NODE_ENV=production webpack --config webpack-production-server.config.js",

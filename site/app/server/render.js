@@ -4,17 +4,14 @@
  * %%
  * Copyright (C) 2009 - 2017 Broadleaf Commerce
  * %%
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Broadleaf Commerce React Starter
  * 
- *       http://www.apache.org/licenses/LICENSE-2.0
+ * Written in 2017 by Broadleaf Commerce info@broadleafcommerce.com
  * 
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * To the extent possible under law, the author(s) have dedicated all copyright and related and neighboring rights to this software to the public domain worldwide. This software is distributed without any warranty.
+ * You should have received a copy of the CC0 Public Domain Dedication along with this software. If not, see <http://creativecommons.org/publicdomain/zero/1.0/>.
+ * 
+ * Please Note - The scope of CC0 Public Domain Dedication extends to Broadleaf Commerce React Starter demo application alone. Linked libraries (including all Broadleaf Commerce Framework libraries) are subject to their respective licenses, including the requirements and restrictions specified therein.
  * #L%
  */
 var i18nService = require('./util/i18nService')
@@ -35,9 +32,9 @@ function renderFullPage(html, state = {}, locale, initialNow = Date.now()) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="/vendor/css/bootstrap.css">
-        <link rel="stylesheet" href="/vendor/css/carousel.css">
-        <link rel="stylesheet" href="/api/theme/css/material-kit.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/react-responsive-carousel@3.1.26/lib/styles/carousel.css">
+        <link rel="stylesheet" href="/api/theme/css/material-kit-1.1.1.css">
         <link rel="stylesheet" href="/api/theme/css/material-kit-extensions.css">
         ${process.env.RENDER_ENV === 'server' ? '<link rel="stylesheet" href="/static/styles.css">' : ''}
     </head>

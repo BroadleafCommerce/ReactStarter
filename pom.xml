@@ -19,8 +19,8 @@
     
     <licenses>
         <license>
-            <name>Apache 2</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <name>CC0 1.0 Universal</name>
+            <url>https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt</url>
             <distribution>repo</distribution>
             <comments>A business-friendly OSS license</comments>
         </license>
@@ -91,7 +91,7 @@
                     <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
                     <organizationName>Broadleaf Commerce</organizationName>
                     <inceptionYear>2009</inceptionYear>
-                    <licenseName>blc_apache</licenseName>
+                    <licenseName>blc_cc0</licenseName>
                     <licenseResolver>${project.uri}/licenses</licenseResolver>
                     <excludes>
                         <exclude>**/*.sql</exclude>
@@ -110,6 +110,7 @@
                         <exclude>**/bootstrap*.css</exclude>
                         <exclude>**/carousel*.css</exclude>
                         <exclude>**/*.json</exclude>
+                        <exclude>**/material-kit.css</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -161,6 +162,7 @@
         <module>core</module>
         <module>admin</module>
         <module>api</module>
+        <module>site</module>
     </modules>
 
 </project>
