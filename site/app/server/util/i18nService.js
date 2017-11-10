@@ -56,14 +56,17 @@ function getMessages(locale) {
     return messages[language]
 }
 
+const eagerlyFetchedLanguages = []
+
 // Initialize Locale data
 LOCALES.forEach((locale) => {
     const language = locale.substring(0, locale.indexOf('-'))
     if (!getLocaleData(language)) {
         localeData[language] = fs.readFileSync(path.join(process.cwd(), `node_modules/react-intl/locale-data/${language}.js`)).toString();
     }
-
-    if (!getMessages(language)) {
+    
+    if (!getMessages(language) && !eagerlyFetchedLanguages.includes(language)) {
+        eagerlyFetchedLanguages.push(language)
         request.get(`${process.env.API_HOST}${process.env.API_CONTEXT_PATH}messages/${language}.json`).then(response => {
             messages[language] = response.body
         })
