@@ -1,0 +1,28 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "4.12.0",
+    "baseName": "BroadleafAngularStarter",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "yarn",
+    "authenticationType": "jwt",
+    "databaseType": "dev",
+    "devDatabaseType": "dev",
+    "prodDatabaseType": "dev",
+    "applicationType": "monolith",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "tr"
+    ],
+    "skipServer": true
+  }
+}
