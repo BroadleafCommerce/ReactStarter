@@ -1,0 +1,26 @@
+{
+    "health": {
+        "title": "Sağlık",
+        "refresh.button": "Yenile",
+        "stacktrace": "Yığın İzleme",
+        "details": {
+            "details": "Detaylar",
+            "properties": "Ozellikler",
+            "name": "Ad",
+            "value": "Deger",
+            "error": "Hata"
+        },
+        "indicator": {
+            "diskSpace": "Disk alanı",
+            "mail": "E-posta"
+        },
+        "table": {
+            "service": "Hizmetin adı",
+            "status": "Durum"
+        },
+        "status": {
+            "UP": "AKTİF",
+            "DOWN": "DEAKTİF"
+        }
+    }
+}
