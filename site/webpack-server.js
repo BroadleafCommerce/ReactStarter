@@ -34,19 +34,19 @@ app.use(hotMiddleware(compiler, {
 
 app.use('/cmsstatic', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
-    forwardPath : function(req) {
+    proxyReqPathResolver : function(req) {
         return path.join(process.env.API_CONTEXT_PATH, 'cmsstatic', req.url)
     }
 }));
 app.use('/img', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
-    forwardPath : function(req) {
+    proxyReqPathResolver : function(req) {
         return path.join(process.env.API_CONTEXT_PATH, 'img', req.url)
     }
 }));
 app.use('/api', proxy(process.env.API_HOST, {
     preserveHostHdr: true,
-    forwardPath : function(req) {
+    proxyReqPathResolver : function(req) {
         return path.join(process.env.API_CONTEXT_PATH, req.url)
     }
 }));

@@ -57,19 +57,19 @@ app.use('/static', express.static(path.join(__dirname, 'static')))
 
 app.use('/cmsstatic', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
-    forwardPath : function(req) {
+    proxyReqPathResolver : function(req) {
         return `${process.env.API_CONTEXT_PATH}cmsstatic${req.url}`
     }
 }));
 app.use('/img', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
-    forwardPath : function(req) {
+    proxyReqPathResolver : function(req) {
         return `${process.env.API_CONTEXT_PATH}img${req.url}`
     }
 }));
 app.use('/api', proxy(process.env.API_HOST, {
     preserveHostHdr: true,
-    forwardPath : function(req) {
+    proxyReqPathResolver : function(req) {
         return `${process.env.API_CONTEXT_PATH}${req.url}`
     }
 }));
