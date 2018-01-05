@@ -18,10 +18,6 @@ module.exports = {
     },
     plugins: [
         new Visualizer(),
-        new CopyWebpackPlugin([{
-            from: path.join(__dirname, 'app/vendor'),
-            to: path.join(__dirname, 'dist/vendor'),
-        }]),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production'),
