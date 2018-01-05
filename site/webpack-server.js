@@ -11,6 +11,7 @@ var config = require('./webpack.config');
 var renderFullPage = require('./app/server/render').renderFullPage;
 var crossAppAuth = require('./app/server/crossAppAuth')
 var i18nService = require('./app/server/util/i18nService')
+var urljoin = require('url-join');
 
 var app = express();
 
@@ -35,19 +36,19 @@ app.use(hotMiddleware(compiler, {
 app.use('/cmsstatic', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
     proxyReqPathResolver : function(req) {
-        return path.join(process.env.API_CONTEXT_PATH, 'cmsstatic', req.url)
+        return urljoin(process.env.API_CONTEXT_PATH, 'cmsstatic', req.url)
     }
 }));
 app.use('/img', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
     proxyReqPathResolver : function(req) {
-        return path.join(process.env.API_CONTEXT_PATH, 'img', req.url)
+        return urljoin(process.env.API_CONTEXT_PATH, 'img', req.url)
     }
 }));
 app.use('/api', proxy(process.env.API_HOST, {
     preserveHostHdr: true,
     proxyReqPathResolver : function(req) {
-        return path.join(process.env.API_CONTEXT_PATH, req.url)
+        return urljoin(process.env.API_CONTEXT_PATH, req.url)
     }
 }));
 

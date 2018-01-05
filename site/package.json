@@ -65,6 +65,7 @@
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
     "superagent": "^3.5.2",
+    "url-join": "^2.0.2",
     "webpack": "^2.4.1",
     "webpack-node-externals": "^1.5.4",
     "webpack-visualizer-plugin": "^0.1.11"

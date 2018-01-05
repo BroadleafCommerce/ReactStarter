@@ -16,6 +16,7 @@
  */
 import 'babel-polyfill'
 import path from 'path'
+import urljoin from 'url-join'
 import express from 'express'
 import cookieParser from 'cookie-parser'
 import proxy from 'express-http-proxy'
@@ -58,19 +59,19 @@ app.use('/static', express.static(path.join(__dirname, 'static')))
 app.use('/cmsstatic', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
     proxyReqPathResolver : function(req) {
-        return `${process.env.API_CONTEXT_PATH}cmsstatic${req.url}`
+        return urljoin(process.env.API_CONTEXT_PATH, 'cmsstatic', req.url)
     }
 }));
 app.use('/img', proxy(process.env.IMAGE_HOST, {
     preserveHostHdr: true,
     proxyReqPathResolver : function(req) {
-        return `${process.env.API_CONTEXT_PATH}img${req.url}`
+        return urljoin(process.env.API_CONTEXT_PATH, 'img', req.url)
     }
 }));
 app.use('/api', proxy(process.env.API_HOST, {
     preserveHostHdr: true,
     proxyReqPathResolver : function(req) {
-        return `${process.env.API_CONTEXT_PATH}${req.url}`
+        return urljoin(process.env.API_CONTEXT_PATH, req.url)
     }
 }));
 
