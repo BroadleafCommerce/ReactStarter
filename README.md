@@ -26,6 +26,8 @@ This application needs to be the first to run since the `site` application is de
 this application by using the Spring Boot Maven Plugin::
 
 ```
+   > cd <path to ReactStarter>
+   > mvn clean install
    > cd api
    > mvn spring-boot:run
 ```
