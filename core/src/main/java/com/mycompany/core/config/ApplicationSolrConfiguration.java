@@ -47,17 +47,17 @@ public class ApplicationSolrConfiguration {
     
     @Bean
     public SolrClient primarySolrClient() {
-        return new HttpSolrClient(primarySolrUrl);
+        return new HttpSolrClient.Builder(primarySolrUrl).build();
     }
     
     @Bean
     public SolrClient reindexSolrClient() {
-        return new HttpSolrClient(reindexSolrUrl);
+        return new HttpSolrClient.Builder(reindexSolrUrl).build();
     }
     
     @Bean
     public SolrClient adminSolrClient() {
-        return new HttpSolrClient(adminSolrUrl);
+        return new HttpSolrClient.Builder(adminSolrUrl).build();
     }
     
     @Bean

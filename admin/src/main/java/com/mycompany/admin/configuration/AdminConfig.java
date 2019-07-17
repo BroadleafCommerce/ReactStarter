@@ -18,18 +18,14 @@ package com.mycompany.admin.configuration;
 
 import org.apache.catalina.connector.Connector;
 import org.broadleafcommerce.common.extensibility.context.merge.Merge;
-import org.broadleafcommerce.common.web.filter.FilterOrdered;
-import org.broadleafcommerce.common.web.filter.IgnorableOpenEntityManagerInViewFilter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
-import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 
 import com.mycompany.core.config.CoreConfig;
 import com.mycompany.core.config.StringFactoryBean;
@@ -68,11 +64,11 @@ public class AdminConfig {
      * Below is the recommended approach according to the Spring docs:
      * {@link https://github.com/spring-projects/spring-boot/blob/1.5.x/spring-boot-docs/src/main/asciidoc/howto.adoc#configure-ssl}
      * @param httpServerPort
-     * @return EmbeddedServletContainerFactory
+     * @return ServletWebServerFactory
      */
     @Bean
-    public EmbeddedServletContainerFactory tomcatEmbeddedServletContainerFactory(@Value("${http.server.port:8081}") int httpServerPort) {
-        TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory();
+    public ServletWebServerFactory tomcatServletWebServerFactory(@Value("${http.server.port:8081}") int httpServerPort) {
+        TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
         tomcat.addAdditionalTomcatConnectors(createStandardConnector(httpServerPort));
         return tomcat;
     }

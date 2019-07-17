@@ -1,6 +1,6 @@
 {
   "name": "boot-react-starter",
-  "version": "1.0.0",
+  "version": "6.0.0",
   "description": "React Starter",
   "main": "./webpack-server.js",
   "repository": "https://github.com/BroadleafCommerce/ReactStarter.git",

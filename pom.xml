@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.broadleafcommerce</groupId>
         <artifactId>broadleaf-boot-starter-parent</artifactId>
-        <version>5.2.3-SNAPSHOT</version>
+        <version>6.0.5-SNAPSHOT</version>
         <relativePath />
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mycompany</groupId>
     <artifactId>boot-react-starter</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>6.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Broadleaf Spring Boot React Starter</name>
     <url>http://www.blc-archetype.com</url>    
@@ -162,7 +162,6 @@
         <module>core</module>
         <module>admin</module>
         <module>api</module>
-        <module>site</module>
     </modules>
 
 </project>

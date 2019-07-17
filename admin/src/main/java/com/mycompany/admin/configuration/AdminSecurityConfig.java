@@ -165,8 +165,8 @@ public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Bean
     @DependsOn("blCacheManager")
-    public FilterRegistrationBean blAdminCsrfFilterFilterRegistrationBean(@Qualifier("blAdminCsrfFilter") SecurityFilter filter) {
-        FilterRegistrationBean registrationBean = new FilterRegistrationBean(filter);
+    public FilterRegistrationBean<SecurityFilter> blAdminCsrfFilterFilterRegistrationBean(@Qualifier("blAdminCsrfFilter") SecurityFilter filter) {
+        FilterRegistrationBean<SecurityFilter> registrationBean = new FilterRegistrationBean<>(filter);
         registrationBean.setEnabled(false);
         return registrationBean;
     }
