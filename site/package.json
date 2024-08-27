@@ -87,7 +87,7 @@
     "tar": "6.2.1",
     "tough-cookie": "2.3.3",
     "url-join": "^2.0.2",
-    "webpack": "^2.4.1",
+    "webpack": "^5.94.0",
     "webpack-node-externals": "^1.5.4",
     "webpack-visualizer-plugin": "^0.1.11"
   },
