@@ -108,7 +108,7 @@
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.17.0",
-    "webpack-dev-middleware": "^1.10.1",
+    "webpack-dev-middleware": "^5.3.4",
     "webpack-hot-middleware": "^2.18.0"
   }
 }
